@@ -29,7 +29,7 @@ tools: Read, Write, Edit, Bash, Task, AskUserQuestion
 ## 4. 반영 (스킬이 쓴다)
 
 - 승인된 항목만 [[구현 현황]]·[[구현 계획]]의 Phase·관련 문서에 **부분 갱신**(Read → 섹션 Edit). frontmatter `date` 갱신.
-- 흐름도 갱신이 승인되면 `<프로젝트>/images/`의 SVG를 다시 그리고 본문 임베드를 확인.
+- 흐름도 갱신이 승인되면 `<프로젝트>/images/`의 SVG를 다시 그리고 본문 임베드를 확인. SVG는 `conventions.md` §7과 `references/diagram-design.md`(시각 품질·§8 체크리스트)를 따른다.
 - MOC의 `[!success]` 진행 현황 블록을 갱신.
 
 ## 5. 정합성 + 마무리

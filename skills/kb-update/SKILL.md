@@ -44,7 +44,7 @@ tools: Read, Write, Edit, Bash, AskUserQuestion
 
 - 흐름/구조/시퀀스를 추가·변경하면 **SVG를 `<프로젝트>/images/`에 생성**하고 본문에 임베드(`![[파일.svg]]`).
 - 텍스트로 충분하면 Mermaid 코드펜스로 본문에 둔다.
-- SVG 작성은 `conventions.md` §7 지침(외부 의존 없음, viewBox, 의미 있는 색)을 따른다.
+- SVG 작성은 `conventions.md` §7(저장·임베드)과 `references/diagram-design.md`(색 토큰·노드 종류별 모양·종단점 강조·픽토그램·가독성·테마 안전)를 따른다. 그리기 전후로 `diagram-design.md` §8 체크리스트를 점검한다.
 
 ## 6. MOC 갱신 + 정합성
 
