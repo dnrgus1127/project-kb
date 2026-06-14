@@ -1,0 +1,16 @@
+{
+  "name": "project-kb",
+  "owner": {
+    "name": "wooki"
+  },
+  "metadata": {
+    "description": "프로젝트 지식베이스 관리 플러그인 마켓플레이스"
+  },
+  "plugins": [
+    {
+      "name": "project-kb",
+      "source": "./",
+      "description": "프로젝트 단위 지식베이스(Obsidian 보관함) 관리: kb-init/update/status/curate/archive/note 스킬 + 기획·상황관리·리스크 에이전트"
+    }
+  ]
+}
