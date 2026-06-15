@@ -16,7 +16,7 @@ tools: Read, Write, Edit, Bash, AskUserQuestion
 
 - **프로젝트명**: 인자로 받거나 묻는다(보관함 폴더명이자 MOC 제목에 쓰임).
 - **코드 리포 경로**: 있으면 받는다(없으면 빈 값, MOC의 "코드가 기준" 주석에 사용).
-- **vault root**: `KB_VAULT_ROOT` 환경변수. 미설정이면 절대경로를 묻는다.
+- **vault root**: `conventions.md` §0의 해석 순서를 따른다(config 파일 `~/.claude/project-kb/config.json`의 `vaultRoot` → 환경변수 `KB_VAULT_ROOT` → 둘 다 없으면 절대경로를 묻고 config에 영속 저장). 경로 변경은 `kb-set-vault` 스킬.
 - **도메인 태그·한 줄 정의**: 사용자에게 간단히 확인(template placeholder 치환용). 모르면 비워두고 사용자가 나중에 채우게 한다.
 
 ## 2. 가드 (자동 생성 금지)

@@ -5,10 +5,11 @@
 
 ## 무엇을 주는가
 
-### 스킬 (7종)
+### 스킬 (8종)
 | 스킬 | 호출 | 역할 |
 |---|---|---|
-| `kb-conventions` | (참조 전용) | taxonomy·tags·wikilink·callout·정본·다이어그램 규칙의 **단일 출처**. 다른 스킬/에이전트가 작업 전 읽는다. |
+| `kb-conventions` | (참조 전용) | taxonomy·tags·wikilink·callout·정본·다이어그램·vault root 규칙의 **단일 출처**. 다른 스킬/에이전트가 작업 전 읽는다. |
+| `kb-set-vault` | 슬래시 | 보관함 루트 절대경로를 영속 config(`~/.claude/project-kb/config.json`)에 설정·변경 |
 | `kb-init` | 슬래시 | 신규 프로젝트 폴더 구조 + MOC + 문서 스텁 + `images/` 생성, 루트 카탈로그 등록 |
 | `kb-update` | 슬래시 | 새 정보를 올바른 문서/섹션으로 라우팅, 정본 갱신, 흐름도 SVG 임베드 |
 | `kb-status` | 슬래시 | 코드↔문서 드리프트 감사 → **승인 후** 구현현황/흐름도/Phase 갱신 |
@@ -34,20 +35,26 @@
 
 설치 후 활성화하면 7개 스킬과 3개 에이전트가 자동 발견된다.
 
-## 구성 — 보관함 루트 지정 (필수)
+## 구성 — 보관함 루트 지정
 
-이 플러그인은 보관함 경로를 하드코딩하지 않는다. 환경변수 `KB_VAULT_ROOT`로 **보관함의 `me` 폴더 절대경로**를 지정한다.
+이 플러그인은 보관함 경로를 하드코딩하지 않는다. 보관함 루트 절대경로는 **설치 환경별로 한 번 입력받아 config 파일에 영속 저장**한다.
 
-`~/.claude/settings.json`:
-```json
-{
-  "env": {
-    "KB_VAULT_ROOT": "/absolute/path/to/knowledge-base/me"
-  }
-}
+config 파일 (버전과 무관하게 유지되는 경로 — 플러그인 업데이트에 안전):
 ```
+~/.claude/project-kb/config.json
+```
+```json
+{ "vaultRoot": "/absolute/path/to/knowledge-base" }
+```
+(Windows: `%USERPROFILE%\.claude\project-kb\config.json`, 예 `{ "vaultRoot": "C:\\path\\to\\vault" }`)
 
-미설정 시 스킬이 경로를 물어본다. 폴더는 자동 생성하지 않으며, 없으면 확인 후 진행한다.
+해석 순서(상세는 `conventions.md` §0):
+1. config 파일의 `vaultRoot`가 있으면 사용.
+2. 없으면 환경변수 `KB_VAULT_ROOT` (하위 호환).
+3. 둘 다 없으면 **첫 사용 시 스킬이 절대경로를 물어** config 파일에 저장한 뒤 사용한다.
+
+경로를 나중에 바꾸려면 `/kb-set-vault` 스킬을 쓴다(현재 값 표시 → 새 절대경로 검증 → config 기록).
+보관함 폴더는 자동 생성하지 않으며, 없으면 확인 후 진행한다.
 
 ## 사용 흐름
 
