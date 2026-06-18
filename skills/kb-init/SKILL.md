@@ -34,6 +34,7 @@ tools: Read, Write, Edit, Bash, AskUserQuestion
 ├── 00. 백로그/          (빈 폴더, .gitkeep으로 유지)
 ├── 1. 개요·전략/        → 개요.md
 ├── 2. 개발·구현/        → 구현 계획.md · 아이디어 백로그.md · 구현 현황.md · 데이터 흐름도.md
+│   └── 칸반보드/        → 칸반보드.md + 1.구현 전/ · 2.구현 중/ · 3.구현 완료/ (빈 컬럼, .gitkeep)
 ├── 3. 분석자료/         (빈 폴더, .gitkeep으로 유지)
 ├── 4. 운영·셋업/        → 운영 가이드.md
 ├── 5. 사용설명서/       → 00 사용설명서 개요.md
@@ -43,7 +44,8 @@ tools: Read, Write, Edit, Bash, AskUserQuestion
 ```
 
 - 작업성 폴더(`00. 백로그`·`3. 분석자료`·`90. 논의사항`·`91. 코드리뷰`)와 `images/`는 **스텁 없이 빈 폴더**로 만들고 `.gitkeep`으로 유지한다. 내용은 `kb-update`(또는 사용자 직접)로 채운다.
-- MOC는 `templates/moc.md`, 각 문서는 `templates/doc-stubs/`의 대응 스텁을 복사한다.
+- **칸반보드**(`2. 개발·구현/칸반보드/`, `conventions.md` §11): `칸반보드.md`를 `templates/칸반보드.md`로 생성하고, 컬럼 폴더 `1. 구현 전`·`2. 구현 중`·`3. 구현 완료`는 빈 폴더(`.gitkeep`)로 둔다. 카드는 `kb-update`로 채운다.
+- MOC는 `templates/moc.md`, 각 문서는 `templates/doc-stubs/`의 대응 스텁을 복사한다. (`설계문서.md` 스텁은 카드 생성 시 `kb-update`가 쓰며, kb-init에서는 빈 컬럼만 둔다.)
 - 모든 `{{PLACEHOLDER}}`를 실제 값으로 치환:
   - `{{PROJECT_NAME}}` `{{PROJECT_SLUG}}`(공백 제거) `{{DATE}}`(오늘) `{{CODE_REPO_PATH}}` `{{DOMAIN_TAG}}` `{{ONE_LINE_DEFINITION}}` `{{STATUS_SUMMARY}}`(예: "착수 단계 ⬜").
   - 모르는 값은 짧은 placeholder 문구(`(작성 필요)`)로 둬 사용자가 채우게 한다.
