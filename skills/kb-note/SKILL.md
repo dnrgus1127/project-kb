@@ -1,6 +1,6 @@
 ---
 name: kb-note
-description: 특정 프로젝트에 속하지 않는 단발 지식/노트 문서(조사 결과, 전략·설계 메모, 학습 메모, 회의/결정 노트)를 Obsidian 보관함의 적절한 주제 폴더에 저장한다. "정리해줘", "조사 결과 메모로 남겨", "노트로 만들어" 같은 비프로젝트 노트에 사용. 프로젝트 단위 지식베이스(4영역 구조)는 kb-init/kb-update를 쓴다. 코드 레포에 속하는 README/개발가이드 등은 대상이 아니다.
+description: 특정 프로젝트에 속하지 않는 단발 지식/노트 문서(조사 결과, 전략·설계 메모, 학습 메모, 회의/결정 노트)를 Obsidian 보관함의 적절한 주제 폴더에 저장한다. "정리해줘", "조사 결과 메모로 남겨", "노트로 만들어" 같은 비프로젝트 노트에 사용. 프로젝트 단위 지식베이스(번호 영역 폴더 구조)는 kb-init/kb-update를 쓴다. 코드 레포에 속하는 README/개발가이드 등은 대상이 아니다.
 user-invocable: true
 argument-hint: "[노트 주제/내용]"
 tools: Read, Write, Edit, Bash, Glob, AskUserQuestion
@@ -25,7 +25,7 @@ tools: Read, Write, Edit, Bash, Glob, AskUserQuestion
 ## 2. 먼저 둘러본다 (Reference first)
 
 - `<vault>` 최상위의 **주제 폴더**(프로젝트 폴더가 아닌)를 살펴 관련 노트가 있는지 확인하고, 있으면 재사용·링크한다.
-- 프로젝트 폴더(4영역 구조를 가진 폴더)와 `_archive/`는 노트 저장 대상에서 제외한다.
+- 프로젝트 폴더(번호 영역 폴더와 📑 인덱스를 가진 폴더)와 `_archive/`는 노트 저장 대상에서 제외한다.
 
 ## 3. 폴더 결정
 

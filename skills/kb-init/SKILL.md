@@ -1,6 +1,6 @@
 ---
 name: kb-init
-description: 신규 프로젝트의 지식베이스 구조를 Obsidian 보관함에 스캐폴딩한다. 4개 영역 폴더 + images/ + 📑 인덱스(MOC) + 영역별 문서 스텁을 생성하고 루트 카탈로그에 등록한다. "프로젝트 지식베이스 만들어", "새 프로젝트 문서 구조 생성", "kb 초기화"에 사용.
+description: 신규 프로젝트의 지식베이스 구조를 Obsidian 보관함에 스캐폴딩한다. 영역 폴더(00 백로그·1~5·90 논의사항·91 코드리뷰) + images/ + 📑 인덱스(MOC) + 영역별 문서 스텁을 생성하고 루트 카탈로그에 등록한다. "프로젝트 지식베이스 만들어", "새 프로젝트 문서 구조 생성", "kb 초기화"에 사용.
 user-invocable: true
 argument-hint: "[프로젝트명] [코드 리포 경로(선택)]"
 tools: Read, Write, Edit, Bash, AskUserQuestion
@@ -31,13 +31,18 @@ tools: Read, Write, Edit, Bash, AskUserQuestion
 ```
 <vault>/<프로젝트명>/
 ├── 📑 인덱스.md
+├── 00. 백로그/          (빈 폴더, .gitkeep으로 유지)
 ├── 1. 개요·전략/        → 개요.md
 ├── 2. 개발·구현/        → 구현 계획.md · 아이디어 백로그.md · 구현 현황.md · 데이터 흐름도.md
-├── 3. 운영·셋업/        → 운영 가이드.md
-├── 4. 사용설명서/       → 00 사용설명서 개요.md
+├── 3. 분석자료/         (빈 폴더, .gitkeep으로 유지)
+├── 4. 운영·셋업/        → 운영 가이드.md
+├── 5. 사용설명서/       → 00 사용설명서 개요.md
+├── 90. 논의사항/        (빈 폴더, .gitkeep으로 유지)
+├── 91. 코드리뷰/        (빈 폴더, .gitkeep으로 유지)
 └── images/             (빈 폴더, .gitkeep 등으로 유지)
 ```
 
+- 작업성 폴더(`00. 백로그`·`3. 분석자료`·`90. 논의사항`·`91. 코드리뷰`)와 `images/`는 **스텁 없이 빈 폴더**로 만들고 `.gitkeep`으로 유지한다. 내용은 `kb-update`(또는 사용자 직접)로 채운다.
 - MOC는 `templates/moc.md`, 각 문서는 `templates/doc-stubs/`의 대응 스텁을 복사한다.
 - 모든 `{{PLACEHOLDER}}`를 실제 값으로 치환:
   - `{{PROJECT_NAME}}` `{{PROJECT_SLUG}}`(공백 제거) `{{DATE}}`(오늘) `{{CODE_REPO_PATH}}` `{{DOMAIN_TAG}}` `{{ONE_LINE_DEFINITION}}` `{{STATUS_SUMMARY}}`(예: "착수 단계 ⬜").
