@@ -1,6 +1,6 @@
 {
   "name": "project-kb",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "프로젝트 단위 지식베이스(Obsidian 보관함)를 스캐폴딩·갱신·정합성 유지하는 스킬과 기획·상황관리·리스크 PM 에이전트 묶음",
   "author": {
     "name": "wooki"
