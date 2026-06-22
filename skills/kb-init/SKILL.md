@@ -1,6 +1,6 @@
 ---
 name: kb-init
-description: 신규 프로젝트의 지식베이스 구조를 Obsidian 보관함에 스캐폴딩한다. 영역 폴더(00 백로그·1~5·90 논의사항·91 코드리뷰) + images/ + 📑 인덱스(MOC) + 영역별 문서 스텁을 생성하고 루트 카탈로그에 등록한다. "프로젝트 지식베이스 만들어", "새 프로젝트 문서 구조 생성", "kb 초기화"에 사용.
+description: 신규 프로젝트의 지식베이스 구조를 Obsidian 보관함에 스캐폴딩한다. 영역 폴더(00 백로그·1~5·90 논의사항·91 코드리뷰·92 발견된 이슈) + images/ + 📑 인덱스(MOC) + 영역별 문서 스텁을 생성하고 루트 카탈로그에 등록한다. "프로젝트 지식베이스 만들어", "새 프로젝트 문서 구조 생성", "kb 초기화"에 사용.
 user-invocable: true
 argument-hint: "[프로젝트명] [코드 리포 경로(선택)]"
 tools: Read, Write, Edit, Bash, AskUserQuestion
