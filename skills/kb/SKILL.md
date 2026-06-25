@@ -14,6 +14,8 @@ tools: Read, Grep, Glob, Bash, AskUserQuestion
 
 `${CLAUDE_PLUGIN_ROOT}/skills/kb-conventions/references/conventions.md`를 Read한다. 보관함 taxonomy(§1)와 vault root 해석(§0)을 그대로 따른다.
 
+검색 대상 **프로젝트가 식별되면** `<vault>/<프로젝트>/conventions.md`(프로젝트별 오버라이드, §12)가 있는지 확인하고, 있으면 Read해 **병합한 유효 taxonomy**를 검색 범위 기준으로 삼는다(어느 폴더를 뒤질지). 이 정보를 검색 서브에이전트(§4)에도 넘긴다.
+
 ## 1. 읽기 전용 원칙
 
 - 이 스킬은 보관함을 **절대 수정하지 않는다.** (Write/Edit 하지 않음)

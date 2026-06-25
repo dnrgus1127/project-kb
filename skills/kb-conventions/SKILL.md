@@ -23,9 +23,14 @@ ${CLAUDE_PLUGIN_ROOT}/skills/kb-conventions/references/conventions.md
 
 ```
 ${CLAUDE_PLUGIN_ROOT}/skills/kb-conventions/references/templates/
-├── moc.md            # 📑 인덱스(MOC)
-├── catalog.md        # 전 프로젝트 루트 카탈로그
-└── doc-stubs/        # 영역별 문서 스텁(개요/계획/아이디어/현황/흐름도/운영/사용설명)
+├── moc.md                  # 📑 인덱스(MOC)
+├── catalog.md              # 전 프로젝트 루트 카탈로그
+├── project-conventions.md  # 프로젝트별 규칙 오버라이드(§12, 온디맨드)
+└── doc-stubs/              # 영역별 문서 스텁(개요/계획/아이디어/현황/흐름도/운영/사용설명)
 ```
 
 템플릿의 `{{PLACEHOLDER}}`는 생성 시 실제 값으로 치환한다. 템플릿에는 어떤 개인 데이터/실제 경로도 넣지 않는다.
+
+## 프로젝트별 오버라이드
+
+전역 규칙을 베이스로 둔 채 특정 프로젝트만 폴더 구조/규칙을 다르게 가져가는 방법(델타 오버라이드)은 `conventions.md` **§12**에 정의돼 있다. 모든 kb-\* 스킬·에이전트는 작업 대상 프로젝트가 식별되면 `<vault>/<프로젝트>/conventions.md`를 확인해 유효 규칙으로 병합한다.

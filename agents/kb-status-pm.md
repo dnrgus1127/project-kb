@@ -9,6 +9,8 @@ tools: Read, Grep, Glob, Bash
 ## 시작 전 (필수)
 `${CLAUDE_PLUGIN_ROOT}/skills/kb-conventions/references/conventions.md`를 Read한다. 특히 "코드가 항상 기준", 구현 현황(정본), Phase 표기, 흐름도/이미지 규칙.
 
+대상 프로젝트 폴더에 `conventions.md`(프로젝트별 오버라이드, §12)가 있으면 Read해 전역 위에 병합한 **유효 구조/규칙**을 감사 기준으로 삼는다.
+
 ## 감사 방법 (근거 기반 — 추측 금지)
 - 코드 리포를 읽는다. Bash는 **읽기 전용 명령만** 쓴다: `git log`, `git diff`, `git show`, `ls`, `cat`(필요 시) 등. 파일을 수정하거나 상태를 바꾸는 명령은 쓰지 않는다.
 - 최근 커밋/변경(`git log --oneline`, `git diff`)과 디렉토리 구조를 [[구현 현황]]·[[구현 계획]]·[[데이터 흐름도]]의 서술과 대조한다.

@@ -12,6 +12,8 @@ tools: Read, Write, Edit, Bash, Task, AskUserQuestion
 
 `${CLAUDE_PLUGIN_ROOT}/skills/kb-conventions/references/conventions.md`를 Read한다.
 
+작업 대상 **프로젝트가 식별되면** `<vault>/<프로젝트>/conventions.md`(프로젝트별 오버라이드, §12)가 있는지 확인하고, 있으면 Read해 전역 위에 **델타로 병합한 유효 규칙**을 기준으로 카드 이동·드리프트 감사를 수행한다(§0·§10은 잠금 — 전역 우선). 구조/폴더 판단은 이 유효 규칙을 따른다.
+
 ## 1. 대상 파악
 
 - **프로젝트**와 **코드 리포 경로**를 확인(인자/대화/ MOC의 코드 리포 경로). 모르면 묻는다.

@@ -12,6 +12,8 @@ tools: Read, Write, Edit, Bash, AskUserQuestion
 
 `${CLAUDE_PLUGIN_ROOT}/skills/kb-conventions/references/conventions.md`를 Read한다.
 
+작업 대상 **프로젝트가 식별되면** `<vault>/<프로젝트>/conventions.md`(프로젝트별 오버라이드, §12)가 있는지 확인하고, 있으면 Read해 전역 위에 **델타로 병합한 유효 규칙**으로 라우팅·작성한다(§0·§10은 잠금 — 전역 우선). 영역 매핑(§2)도 이 유효 규칙을 따른다.
+
 ## 1. 대상 파악
 
 - **프로젝트**: 인자/대화에서 식별. 모르면 `<vault>` 하위 폴더 목록을 보여주고 고르게 한다.
